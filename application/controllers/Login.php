@@ -24,4 +24,34 @@ class Login extends CI_Controller {
 		$this->load->view('login');
 		$this->load->view('layouts/footer');
 	}
+
+
+	public function test()
+	{
+		$test = Usuarios::all(); 
+
+
+		echo $test;
+
+
+
+		// User::find(1); 
+
+		// User::where('id', '>', 1)->get(); 
+	}
+
+
+	// 	public function car()
+	// {
+		
+	// 	$result=$this->Test->users();
+
+	// 	print_r($result);
+	// }
+
+
+
+
+
+
 }

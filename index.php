@@ -1,4 +1,8 @@
 <?php
+
+// agrego para poder usar eloquent ORM
+require_once 'vendor/autoload.php';
+
 /**
  * CodeIgniter
  *
