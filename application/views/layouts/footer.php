@@ -234,8 +234,10 @@
 <!-- daterangepicker -->
 <script src="<?php echo base_url();?>assets/bower_components/moment/min/moment.min.js"></script>
 <script src="<?php echo base_url();?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
 <!-- datepicker -->
-<script src="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
+
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url();?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
@@ -254,5 +256,12 @@
  -->
 <!-- iCheck -->
 <script src="<?php echo base_url();?>assets/plugins/iCheck/icheck.min.js"></script>
+
+
+<script src="<?php echo base_url();?>assets/js/table.js"></script>
+
+<script src="<?php echo base_url();?>assets/js/datepicker.js"></script> 
+
+   
 </body>
 </html>

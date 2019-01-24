@@ -34,12 +34,10 @@
 		
 		
 		
-		<h1>Usuarios <small>registrados</small></h1>
+		<h1>Proyectos</h1>
 	</div>
 
-	<div>
-
-		<!-- <a id="addUsers"><span class="btn-success btn-xs glyphicon glyphicon-plus" data-toggle="modal" ></span></a>		 -->	
+	<div>			
 
 		<a id="pdf"><span class="btn-danger  btn-xs glyphicon glyphicon-file">PDF</span></a>
 
@@ -78,11 +76,11 @@
 					<td><?php echo $data->role ?> </td>
 					<td><?php echo $data->fecha ?> </td>				
 					<td >
-						<a class="approved" href="<?php echo base_url("users/getUserByID/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-zoom-in" data-toggle="approved" title="Approved" onclick="approved()"></span></a>
+						<a class="approved" href="<?php echo base_url("projects/approved/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-ok" data-toggle="approved" title="Approved" onclick="approved()"></span></a>
 
-						<a class="rejected"  href="<?php echo base_url("users/edit/$data->id") ?>" ><span class="btn-success btn-xs glyphicon glyphicon glyphicon-pencil" data-toggle="rejected" title="Rejected" onclick="rejected()" ></span></a>
+						<a class="rejected"  href="<?php echo base_url("projects/rejected/$data->id") ?>" ><span class="btn-warning btn-xs glyphicon glyphicon glyphicon-remove" data-toggle="rejected" title="Rejected" onclick="rejected()" ></span></a>
 
-						<a id="deleted"  href="<?php echo base_url("users/delete/$data->id") ?>" ><span class="btn-danger btn-xs glyphicon glyphicon-trash" data-toggle="deleted" title="Deleted" onclick="deleted()"></span></a>
+						<a id="deleted"  href="<?php echo base_url("projects/deleted/$data->id") ?>" ><span class="btn-danger btn-xs glyphicon glyphicon-trash" data-toggle="deleted" title="Deleted" onclick="deleted()"></span></a>
 					</td>
 
 

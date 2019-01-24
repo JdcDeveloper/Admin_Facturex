@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title><?php echo $title ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -11,6 +11,13 @@
 
    <!-- jQuery 3 -->
  <script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+
+
+  <!-- Datatable js -->
+  <script src="<?php echo base_url();?>assets/lib/js/jquery.dataTables.min.js"></script>
+
+  <!-- datepicker -->
+<script src="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
  <!-- jQuery UI 1.11.4 -->
  <script src="<?php echo base_url();?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -48,6 +55,14 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/iCheck/square/blue.css">
 
+
+
+  <!-- Table styles -->
+
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/lib/css/jquery.dataTables.min.css"> 
+
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -57,7 +72,17 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+ <!--  la url base para usarla con los js -->
+
+<script type="text/javascript">
+  var BASE_URL = "<?php echo base_url(); ?>";
+</script>
+
 </head>
+
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -65,9 +90,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>A</b>FA</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b>Facturex</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -361,7 +386,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li> <a href="<?php echo base_url();?>dashboard"><i class="fa fa-circle-o"></i> Area</a></li>
+            <li> <a href="<?php echo base_url();?>dashboard/area"><i class="fa fa-circle-o"></i> Area</a></li>
            <!--  <li ><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li> -->
           </ul>
@@ -398,8 +423,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li> <a href="<?php echo base_url();?>login"><i class="fa fa-circle-o"></i> View</a></li>
-             <li> <a href="<?php echo base_url();?>login"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li> <a href="<?php echo base_url();?>users/view"><i class="fa fa-circle-o"></i> View</a></li>
+             <li> <a href="<?php echo base_url();?>users/add"><i class="fa fa-circle-o"></i> Add</a></li>
+             <li> <a href="<?php echo base_url();?>users/profile"><i class="fa fa-circle-o"></i> Profile</a></li>
             <!-- <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
             <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
