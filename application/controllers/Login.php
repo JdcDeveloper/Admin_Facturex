@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 	{
 		// $data['user'] = $this->session->userdata('user');
 
-		$data[ 'logeo' ] = false;
+		// $data[ 'logeo' ] = false;
 
 		$data[ 'title' ] = 'login';
 		$this->load->view('layouts/header',$data);	
@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 	}
 
 
-	public function initSession()
+	public function signIn()
 	{
 		$this->form_validation->set_rules('user', 'user', 'required|max_length[25]');
 		$this->form_validation->set_rules('password', 'password', 'required|max_length[10]');
@@ -25,17 +25,19 @@ class Login extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE){
 
-			
-			$data[ 'logeo' ] = true;
+			// para el form validation es mejor cargar vistas
+			// por que si no, se pierde la validacion con los redirect			
 
 			$data[ 'title' ] = 'login';
 			$this->load->view('layouts/header',$data);		
 			$this->load->view('login');
 			$this->load->view('layouts/footer');
+
+			// redirect(base_url());
 			
 		}else{
 
-			$data[ 'logeo' ] = true;
+			// $data[ 'logeo' ] = true;
 
 			$data[ 'title' ] = 'dashboard';
 			$user = $this->input->post('user');
@@ -48,17 +50,37 @@ class Login extends CI_Controller {
 			// $role = $this->security->xss_clean($role);
 
 
-			$this->session->set_userdata('user',$user);
-			$this->session->set_userdata('password',$password);
+			// $this->session->set_userdata('user',$user);
+			// $this->session->set_userdata('password',$password);
+
+
 			// $this->session->set_userdata('role',$role);
 
 			
 
-			$data['user'] = $this->session->userdata('user');
+			// $data['user'] = $this->session->userdata('user');
 			
 
 
-			 $userCheck = Usuarios::where('email',$user)->first();
+			 $dataUser = Usuarios::where('email',$user)->first();
+
+			 $dataUser['email'];
+			 $dataUser['nombre'];
+			 $dataUser['role'];
+			 $dataUser['created_at'];
+
+
+
+			 $this->session->set_userdata('user', $dataUser['email']);
+			 $this->session->set_userdata('nombre', $dataUser['nombre']);
+			 $this->session->set_userdata('role', $dataUser['role']);
+			 $this->session->set_userdata('created_at', $dataUser['created_at']);
+
+
+			$data['user'] = $this->session->userdata('user');
+			$data['nombre'] = $this->session->userdata('nombre');
+			$data['role'] = $this->session->userdata('role');
+			$data['created_at'] = $this->session->userdata('created_at');
 
 
 
@@ -66,13 +88,13 @@ class Login extends CI_Controller {
 
 			// $existsUserPass=$this->Login_Model->login($user ,$password,$role);
 
-			if ($userCheck &&  $userCheck !== null)
+			if ($dataUser['email'] && $dataUser['role']=== 'admin')
 			{
 				$this->load->view('layouts/header',$data);												
 				$this->load->view('dashboard');				
 				$this->load->view('layouts/footer');
 
-			} elseif ($userCheck && $userCheck !== null){
+			} elseif ($dataUser['email'] && $dataUser['role']=== 'user'){
 
 				$this->load->view('layouts/header',$data);									
 				$this->load->view('dashboard');
@@ -82,7 +104,7 @@ class Login extends CI_Controller {
 
 			}else {
 
-				// $this->session->set_flashdata('userNoRegister', 'Please check your username and password');
+				$this->session->set_flashdata('userNoRegister', 'Por favor comprueba tu usuario y contraseña');
 				// $data['user'] = $this->session->userdata('user');
 				redirect(base_url());
 
@@ -102,6 +124,26 @@ class Login extends CI_Controller {
 
 }
 
+	public function signOut()	{       	
+		
+		
+		$this->session->userdata('user');
+		
+		$this->session->unset_userdata('user');
+		
+		// if ($this->session->userdata('role')!=="admin" || $this->session->userdata('role')!=="user") {
+
+		if ($this->session->userdata('user') !== TRUE) {			
+
+			$this->session->set_flashdata('closeSession', 'Has cerrado session');
+
+			redirect(base_url());		
+
+		}	
+
+	}
+
+
 
 	public function test(){
 
@@ -109,7 +151,17 @@ class Login extends CI_Controller {
 
 
 
-		 echo $data;
+		 // echo $data;
+
+		 // print_r($data);
+
+		 // obtener el typo de una variable
+
+		echo gettype($data);
+
+		echo $data['nombre'];
+
+		echo $data['role'];
 	}
 
 

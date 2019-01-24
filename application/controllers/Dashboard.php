@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
 
 	public function area()
 	{
-		$data[ 'logeo' ] = true;
+		// $data[ 'logeo' ] = true;
 		
 		$data[ 'title' ] = 'area';    
 

@@ -1,3 +1,47 @@
+  <p class="bg-danger" id="msgNoUser">
+
+    <?php if($this->session->flashdata('userNoRegister')): ?>
+
+      <?php echo $this->session->flashdata('userNoRegister'); ?>
+
+    <?php endif; ?>
+
+  </p>
+
+  
+  <p class="bg-success" id="msgUserRegister">
+
+    <?php if($this->session->flashdata('userRegister')): ?>
+
+      <?php echo $this->session->flashdata('userRegister'); ?>
+
+    <?php endif; ?>
+
+  </p>
+
+  <p class="bg-success" id="msgPassChange">
+
+    <?php if($this->session->flashdata('passwordChange')): ?>
+
+      <?php echo $this->session->flashdata('passwordChange'); ?>
+
+    <?php endif; ?>
+
+  </p>
+
+  <p class="bg-danger" id="msgCloseSess">
+
+    <?php if($this->session->flashdata('closeSession')): ?>
+
+      <?php echo $this->session->flashdata('closeSession'); ?>
+
+    <?php endif; ?>
+
+  </p>
+
+
+
+
 <div class="login-box">
   <div class="login-logo">
     <a href="../../index2.html"><b>Admin</b>LTE</a>
@@ -8,7 +52,7 @@
 
     <!-- <form action="../../index2.html" method="post"> -->
 
-      <?php echo form_open('login/initsession') ?>
+      <?php echo form_open('login/signin') ?>
 
 
       <div class="form-group has-feedback">
