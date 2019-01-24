@@ -86,6 +86,13 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
+   <!-- <?php //if($this->session->userdata('user')): ?>  -->
+
+    <?php if($logeo): ?> 
+
+
+
+
   <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
@@ -350,6 +357,11 @@
       </div>
     </nav>
   </header>
+
+
+
+   
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -571,8 +583,16 @@
       </ol>
     </section>
 
+
+ <?php endif; ?>
+
+
+
+
     <!-- Main content -->
     <section class="content">
+
+
 
 
 

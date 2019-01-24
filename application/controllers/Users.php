@@ -11,6 +11,7 @@ class Users extends CI_Controller {
 
 	public function view()
 	{
+		$data[ 'logeo' ] = true;
 
 		$data[ 'title' ] = 'view';
 
@@ -26,7 +27,7 @@ class Users extends CI_Controller {
 
 	public function add()
 	{
-
+		$data[ 'logeo' ] = true;
 
 		$data[ 'title' ] = 'add';		  
 
@@ -87,7 +88,7 @@ class Users extends CI_Controller {
 
 	public function register(){
 
-
+		$data[ 'logeo' ] = true;
 
 		// if (isset($_POST['submit'])) { 
 

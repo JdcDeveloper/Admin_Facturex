@@ -39,7 +39,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper"> 
+ 
 
   <header class="main-header">
     <!-- Logo -->
@@ -519,6 +520,15 @@
         <li class="active">Dashboard</li>
       </ol>
     </section>
+
+       <p class="bg-success">
+        <?php if($this->session->userdata('user')): ?>
+
+            <?php echo "Welcome User: " . $this->session->userdata('user'); ?>
+
+        <?php endif; ?>
+    </p>    
+
 
     <!-- Main content -->
     <section class="content">
