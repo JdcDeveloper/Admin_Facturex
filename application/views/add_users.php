@@ -1,6 +1,6 @@
 <div class="row col-md-6 col-md-offset-3 ">
 
-	<?php echo form_open('users/add'); ?>	
+	<?php echo form_open('users/register'); ?>	
 	
 
 	<div class="form-group">
@@ -59,14 +59,14 @@
 			<select class="form-control" name="role" id="role">
 				<option value="0">Seleccionar Role</option>				
 			</select>
-			<!-- <div class="text-danger"><?php //echo form_error('role');  ?></div>	 -->
+			
 
 		</div>
-		<!-- /.input group -->
+		
 	</div>
 
 
-	<div class="form-group">
+<!-- 	<div class="form-group">
 		<label>Fecha:</label>
 
 		<div class="input-group">
@@ -75,12 +75,12 @@
 			</div>
 			
 			<input type="text" id="datepicker" name="fecha" placeholder="Fecha de registro" class="form-control" >
-			<!-- <div class="text-danger"><?php //echo form_error('date');  ?></div> -->
+		
 
 		</div>
-		<!-- /.input group -->
+		
 	</div>	
-
+ -->
 
 
 

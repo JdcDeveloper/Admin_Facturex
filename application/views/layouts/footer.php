@@ -260,7 +260,10 @@
 
 <script src="<?php echo base_url();?>assets/js/table.js"></script>
 
-<script src="<?php echo base_url();?>assets/js/datepicker.js"></script> 
+<!-- <script src="<?php echo base_url();?>assets/js/datepicker.js"></script>  -->
+
+<!-- scripts main -->
+<script src="<?php echo base_url();?>assets/js/main.js"></script>  
 
    
 </body>

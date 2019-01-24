@@ -34,7 +34,7 @@
 		
 		
 		
-		<h1>Usuarios <small>registrados</small></h1>
+		<h1>Usuarios</h1>
 	</div>
 
 	<div>
@@ -76,7 +76,7 @@
 					<td><?php echo $data->nombre ?> </td>
 					<td><?php echo $data->email ?> </td>
 					<td><?php echo $data->role ?> </td>
-					<td><?php echo $data->fecha ?> </td>				
+					<td><?php echo $data->created_at ?> </td>				
 					<td >
 						<a class="approved" href="<?php echo base_url("users/getUserByID/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-zoom-in" data-toggle="approved" title="Approved" onclick="approved()"></span></a>
 

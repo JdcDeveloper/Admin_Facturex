@@ -12,10 +12,10 @@ use \Illuminate\Database\Eloquent\Model as Eloquent;
 
 // composer dump-autoload 
 
-class Usuarios extends Eloquent {
+class Roles extends Eloquent {
 
 
 	// le concateno por que postgres esta case sensitive
 
-    protected $table = "jonathan."."Usuarios"; // table name
+    protected $table = "jonathan."."Roles"; // table name
 }
