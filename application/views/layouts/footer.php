@@ -223,9 +223,16 @@
 <!-- Bootstrap 3.3.7 -->
 <!-- <script src="<?php //echo base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 
+
+<!-- google charts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script src="<?php echo base_url();?>assets/js/charts.js"></script>   
+
 <!-- Morris.js charts -->
 <script src="<?php echo base_url();?>assets/bower_components/raphael/raphael.min.js"></script>
 <script src="<?php echo base_url();?>assets/bower_components/morris.js/morris.min.js"></script>
+
 <!-- Sparkline -->
 <script src="<?php echo base_url();?>assets//bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -265,7 +272,10 @@
 <!-- <script src="<?php echo base_url();?>assets/js/datepicker.js"></script>  -->
 
 <!-- scripts main -->
-<script src="<?php echo base_url();?>assets/js/main.js"></script>  
+<script src="<?php echo base_url();?>assets/js/main.js"></script>
+
+
+<!-- <script src="<?php //echo base_url();?>assets/js/charts.js"></script>    -->
 
    
 </body>

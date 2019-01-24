@@ -30,11 +30,10 @@
 
 			<?php endif; ?>
 
-		</p>
+		</p>		
 		
 		
-		
-		<h1>Usuarios</h1>
+		<!-- <h1>Usuarios</h1> -->
 	</div>
 
 	<div>

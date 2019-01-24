@@ -40,6 +40,7 @@ class Login extends CI_Controller {
 			// $data[ 'logeo' ] = true;
 
 			$data[ 'title' ] = 'dashboard';
+			$data[ 'site' ] = 'dashboard';
 			$user = $this->input->post('user');
 			$password = $this->input->post('password');
 			// $role = $this->input->post('role');

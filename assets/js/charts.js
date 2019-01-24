@@ -1,11 +1,11 @@
-$(document).ready(function() {
+// $(document).ready(function() {
  
-	$("#usersHide").click(function() {
+// 	$("#usersHide").click(function() {
 		
-		$("#graphicUsers").toggle();
-	});	
+// 		$("#graphicUsers").toggle();
+// 	});	
 	
-});
+// });
 
 
 function graphic(result){
@@ -16,17 +16,16 @@ function graphic(result){
 
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
-      ['Stadistics', 'Totals'],
-      ['Users', result.users.totalusers],
-      ['Customers', result.customers.totalcustomers],
-      ['Projects', result.projects.totalprojects],
-      ['Leads', result.leads.totalleads]           
+      ['Estadisticas', 'Totals'],
+      ['Users registrados', result.usersRegister],
+      ['Role Admin', result.admin],
+      ['Role User', result.user]              
       ]);
 
     var options = {
       chart: {
-        title: 'JDC Customers',
-        subtitle: 'Stadistics',
+        // title: 'Admin Facturex',
+        // subtitle: 'Estadisticas',
       },
           bars: 'vertical' // Required for Material Bar Charts.
         };
@@ -42,7 +41,7 @@ function graphic(result){
 
 // dashboard chart
 $.ajax({
-	url: BASE_URL+'dashboard/totalgraphic',
+	url: BASE_URL+'dashboard/chartdata',
 	type: 'GET',
 	dataType: 'json'	
 })

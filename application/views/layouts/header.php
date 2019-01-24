@@ -323,8 +323,9 @@
                   <small>Miembro desde <?php echo $created_at; ?></small>
                 </p>
               </li>
+              
               <!-- Menu Body -->
-              <li class="user-body">
+              <!-- <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -335,9 +336,10 @@
                   <div class="col-xs-4 text-center">
                     <a href="#">Friends</a>
                   </div>
-                </div>
+                </div> -->
                 <!-- /.row -->
-              </li>
+              <!-- </li> -->
+
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
@@ -377,7 +379,7 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+     <!--  <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -385,7 +387,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -399,6 +401,7 @@
           </a>
           <ul class="treeview-menu">
             <li> <a href="<?php echo base_url();?>dashboard/area"><i class="fa fa-circle-o"></i> Area</a></li>
+             <li> <a href="<?php echo base_url();?>dashboard/area"><i class="fa fa-circle-o"></i> Map</a></li>
            <!--  <li ><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li> -->
           </ul>
@@ -437,7 +440,7 @@
           <ul class="treeview-menu">
             <li> <a href="<?php echo base_url();?>users/view"><i class="fa fa-circle-o"></i> View</a></li>
              <li> <a href="<?php echo base_url();?>users/add"><i class="fa fa-circle-o"></i> Add</a></li>
-             <li> <a href="<?php echo base_url();?>users/profile"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <!--  <li> <a href="<?php //echo base_url();?>users/profile"><i class="fa fa-circle-o"></i> Profile</a></li> -->
             <!-- <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
             <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li> -->
@@ -453,14 +456,14 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+            <!-- <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
             <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
             <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
             <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li> -->
           </ul>
         </li>
-        <li class="treeview">
+      <!--   <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
             <span class="pull-right-container">
@@ -472,8 +475,8 @@
             <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
             <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
-        </li>
-        <li class="treeview">
+        </li> -->
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
             <span class="pull-right-container">
@@ -484,7 +487,7 @@
             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
-        </li>
+        </li> -->
       <!--   <li>
           <a href="pages/calendar.html">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
@@ -578,8 +581,8 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="<?php echo base_url();?>dashboard/area"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><?php echo $site ?></li>
       </ol>
     </section>
 

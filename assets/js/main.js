@@ -14,6 +14,24 @@ $.ajax({
 
 
 
+// //************* dashboard totals ******************//
+$.ajax({
+  url: BASE_URL+'dashboard/totalgeneral',   
+  dataType: 'json'    
+})
+.done(function(result) {  
+
+ $('#totalusers').html(result);
+
+ // console.log(result);
+
+});
+
+
+
+
+
+
 
 
 

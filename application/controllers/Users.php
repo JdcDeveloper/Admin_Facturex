@@ -9,11 +9,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Users extends CI_Controller {
 
+	// private $user =	 $this->session->userdata('user');
+	// private $nombre = $this->session->userdata('nombre');
+	// private $role =	$this->session->userdata('role');
+	// private $fecha = $this->session->userdata('created_at');
+
+
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+		// $data['user'] = $this->session->userdata('user');
+		// $data['nombre'] = $this->session->userdata('nombre');
+		// $data['role'] = $this->session->userdata('role');
+		// $data['created_at'] = $this->session->userdata('created_at');
+	}
+
 	public function view()
 	{
 		// $data[ 'logeo' ] = true;
 
-		$data[ 'title' ] = 'view';
+		$data['user'] = $this->session->userdata('user');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['role'] = $this->session->userdata('role');
+		$data['created_at'] = $this->session->userdata('created_at');
+
+		
+		
+
+		$data['title'] = 'view';
+
+		$data['site'] = 'Users';   
 
 		$data['usuarios'] = Usuarios::all();     
 
@@ -29,7 +55,14 @@ class Users extends CI_Controller {
 	{
 		// $data[ 'logeo' ] = true;
 
-		$data[ 'title' ] = 'add';		  
+		$data['user'] = $this->session->userdata('user');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['role'] = $this->session->userdata('role');
+		$data['created_at'] = $this->session->userdata('created_at');
+
+		$data['title'] = 'add';
+
+		$data['site'] = 'Users';   		  
 
 		$this->load->view('layouts/header',$data);
 
@@ -88,6 +121,13 @@ class Users extends CI_Controller {
 
 	public function register(){
 
+		$data['user'] = $this->session->userdata('user');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['role'] = $this->session->userdata('role');
+		$data['created_at'] = $this->session->userdata('created_at');
+
+
+
 		// $data[ 'logeo' ] = true;
 
 		// if (isset($_POST['submit'])) { 
@@ -123,6 +163,31 @@ class Users extends CI_Controller {
 		// }
 
 
+
+	}
+
+	public function getSession(){
+
+		print_r($data['user'] = $this->session->userdata('user'));
+
+		// $data['user'] = $this->session->userdata('user');
+		// $data['nombre'] = $this->session->userdata('nombre');
+		// $data['role'] = $this->session->userdata('role');
+		// $data['created_at'] = $this->session->userdata('created_at');
+
+		// echo $data['user'] = $this->session->userdata('user');
+		// echo $data['nombre'] = $this->session->userdata('nombre');
+		// $data['role'] = $this->session->userdata('role');
+		// $data['created_at'] = $this->session->userdata('created_at');
+
+		// echo "funcionq";
+
+	}
+
+
+	public function test(){
+
+		$this->getSession();
 
 	}
 
