@@ -92,13 +92,13 @@ class Login extends CI_Controller {
 			if ($dataUser['email'] && $dataUser['role']=== 'admin')
 			{
 				$this->load->view('layouts/header',$data);												
-				$this->load->view('dashboard');				
+				$this->load->view('admin/dashboard');				
 				$this->load->view('layouts/footer');
 
 			} elseif ($dataUser['email'] && $dataUser['role']=== 'user'){
 
 				$this->load->view('layouts/header',$data);									
-				$this->load->view('dashboard');
+				$this->load->view('users/dashboard');
 				$this->load->view('layouts/footer');
 
 				
@@ -219,11 +219,6 @@ class Login extends CI_Controller {
 
 				echo "no verificado";
 			}
-
-
-
-
-
 
 
 

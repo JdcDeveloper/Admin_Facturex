@@ -1,6 +1,6 @@
 // cargo los roles con ajax
 $.ajax({
-  url: BASE_URL+'role',   
+  url: BASE_URL+'api/roles',   
   dataType: 'json'    
 })
 .done(function(result) { 
@@ -16,7 +16,7 @@ $.ajax({
 
 // //************* dashboard totals ******************//
 $.ajax({
-  url: BASE_URL+'dashboard/totalgeneral',   
+  url: BASE_URL+'api/totalgeneral',   
   dataType: 'json'    
 })
 .done(function(result) {  

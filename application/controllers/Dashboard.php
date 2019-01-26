@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
 
 	public function area()
 	{
-		// $data[ 'logeo' ] = true;
+		
 		$data['user'] = $this->session->userdata('user');
 		$data['nombre'] = $this->session->userdata('nombre');
 		$data['role'] = $this->session->userdata('role');
@@ -14,69 +14,31 @@ class Dashboard extends CI_Controller {
 		
 		$data['title'] = 'area';
 
-		$data['site'] = 'Dashboard';       
-
-		$this->load->view('layouts/header',$data);
-
-		$this->load->view('dashboard');
-
-		$this->load->view('layouts/footer'); 
-
-	}
-
-
-	public function chartData(){
-
-		
-		$users = Usuarios::get()->count('email');
-		$admin = Usuarios::where('role','admin')->get()->count(); 
-		$user = Usuarios::where('role','user')->get()->count();  
+		$data['site'] = 'Dashboard';
 		
 
-		$data = array(
-			'usersRegister' => $users,
-			'admin' => $admin,
-			'user' => $user			
-		);		
+		if ($this->session->userdata('role')==="admin") {
 
 
-
-		echo json_encode($data);
-
-	}
-
+			$this->load->view('layouts/header',$data);
+			$this->load->view('admin/dashboard');
+			$this->load->view('layouts/footer');
 
 
+		}elseif ($this->session->userdata('role')==="admin") {
+			
+			$this->load->view('layouts/header',$data);
+			$this->load->view('users/dashboard');
+			$this->load->view('layouts/footer');
 
-	public function totalGeneral(){
-		
+		}else{
 
-		$data = Usuarios::get()->count('email'); 
-
-		echo json_encode($data);
+			redirect(base_url());
+		} 
 
 	}
 
 
-
-	public function totalAdmins(){		
-
-
-		$data = Usuarios::where('role','admin')->get()->count(); 
-
-		echo json_encode($data);
-
-	}
-
-
-	public function totalUsers(){		
-
-
-		$data = Usuarios::where('role','user')->get()->count(); 
-
-		echo json_encode($data);
-
-	}
 
 
 

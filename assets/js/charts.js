@@ -41,7 +41,7 @@ function graphic(result){
 
 // dashboard chart
 $.ajax({
-	url: BASE_URL+'dashboard/chartdata',
+	url: BASE_URL+'api/chartdata',
 	type: 'GET',
 	dataType: 'json'	
 })

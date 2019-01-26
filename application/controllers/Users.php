@@ -40,7 +40,7 @@ class Users extends CI_Controller {
 
 		$this->load->view('layouts/header',$data);
 
-		$this->load->view('users');
+		$this->load->view('admin/users');
 
 		$this->load->view('layouts/footer'); 
 
@@ -61,7 +61,7 @@ class Users extends CI_Controller {
 
 		$this->load->view('layouts/header',$data);
 
-		$this->load->view('add_users');
+		$this->load->view('admin/add');
 
 		$this->load->view('layouts/footer'); 
 
