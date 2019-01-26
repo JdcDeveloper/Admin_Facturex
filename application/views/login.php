@@ -8,6 +8,16 @@
 
   </p>
 
+   <p class="bg-danger" id="">
+
+    <?php if($this->session->flashdata('passwordCheck')): ?>
+
+      <?php echo $this->session->flashdata('passwordCheck'); ?>
+
+    <?php endif; ?>
+
+  </p>
+
   
   <p class="bg-success" id="msgUserRegister">
 

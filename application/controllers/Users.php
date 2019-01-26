@@ -2,11 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-// para usar el modelo orm
-// use App\Usuarios;
-
-// use Illuminate\Http\Request;
-
 class Users extends CI_Controller {
 
 	// private $user =	 $this->session->userdata('user');
@@ -149,7 +144,8 @@ class Users extends CI_Controller {
 
 		$usuario->nombre = $this->input->post('nombre');
 		$usuario->email = $this->input->post('email');
-		$usuario->password = md5($this->input->post('password'));  
+		// $usuario->password = md5($this->input->post('password'));
+		$usuario->password = password_hash($this->input->post('password'),PASSWORD_BCRYPT);
         $usuario->imagen = 'user.png';
         $usuario->role = $this->input->post('role');	
 
