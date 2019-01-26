@@ -25,7 +25,7 @@ class Dashboard extends CI_Controller {
 			$this->load->view('layouts/footer');
 
 
-		}elseif ($this->session->userdata('role')==="admin") {
+		}elseif ($this->session->userdata('role')==="user") {
 			
 			$this->load->view('layouts/header',$data);
 			$this->load->view('users/dashboard');

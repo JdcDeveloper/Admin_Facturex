@@ -20,7 +20,7 @@ class Login extends CI_Controller {
 	public function signIn()
 	{
 		$this->form_validation->set_rules('user', 'user', 'required|max_length[25]');
-		$this->form_validation->set_rules('password', 'password', 'required|max_length[100]');
+		$this->form_validation->set_rules('password', 'password', 'required|max_length[15]');
 		// $this->form_validation->set_rules('role', 'Role', 'required|min_length[3]');  
 
 		if ($this->form_validation->run() == FALSE){
@@ -62,26 +62,38 @@ class Login extends CI_Controller {
 			// $data['user'] = $this->session->userdata('user');
 			
 
-
+			// $datauser biene como un objeto
 			 $dataUser = Usuarios::where('email',$user)->first();
 
+			 // accedo al objeto a la contraseña en db
 			 $dataUser->password;
 
 
+			 // verifico que la contraseña ingresa por el usuario
+			 // coincidad con el password en la base de datos 
+			 // la cual tiene hash, para que esto funcione es
+			 // necesario a ver usado password_hash
+
 			 if (password_verify($password,$dataUser->password)) {
 			
+				// extraigo la data de la consulta,para establecer la info
+				// de la session
+
 				 $dataUser['email'];
 				 $dataUser['nombre'];
 				 $dataUser['role'];
 				 $dataUser['created_at'];
 
-
+			 // establesco la data para la session
 
 			 $this->session->set_userdata('user', $dataUser['email']);
 			 $this->session->set_userdata('nombre', $dataUser['nombre']);
 			 $this->session->set_userdata('role', $dataUser['role']);
 			 $this->session->set_userdata('created_at', $dataUser['created_at']);
 
+
+			// le paso la data de la session y la guardo en un array 
+			// para usar las variables en las vistas etc
 
 			$data['user'] = $this->session->userdata('user');
 			$data['nombre'] = $this->session->userdata('nombre');
@@ -229,13 +241,19 @@ class Login extends CI_Controller {
 	public function signOut()	{       	
 		
 		
-		$this->session->userdata('user');
+		// $this->session->userdata('user');
 		
-		$this->session->unset_userdata('user');
+		// $this->session->unset_userdata('user');
+
+		$this->session->userdata('role');
+		
+		$this->session->unset_userdata('role');
 		
 		// if ($this->session->userdata('role')!=="admin" || $this->session->userdata('role')!=="user") {
 
-		if ($this->session->userdata('user') !== TRUE) {			
+		// if ($this->session->userdata('user') !== TRUE) {
+
+		if ($this->session->userdata('role') !== TRUE) {				
 
 			$this->session->set_flashdata('closeSession', 'Has cerrado session');
 
