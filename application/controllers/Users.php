@@ -146,8 +146,8 @@ class Users extends CI_Controller {
 		$usuario->email = $this->input->post('email');
 		// $usuario->password = md5($this->input->post('password'));
 		$usuario->password = password_hash($this->input->post('password'),PASSWORD_BCRYPT);
-        $usuario->imagen = 'user.png';
-        $usuario->role = $this->input->post('role');	
+		$usuario->imagen = 'user.png';
+		$usuario->role = $this->input->post('role');	
 
 
 		$usuario->save();     
@@ -176,7 +176,7 @@ class Users extends CI_Controller {
 
 		// findOrFail nos da un error mas especifico al no encontrar registros,
     	// como un codigo 404 por ejemplo
-		 $usuario['usuario'] = Usuarios::findOrFail($id);
+		$usuario['usuario'] = Usuarios::findOrFail($id);
 
 		 // echo $usuario;
 
@@ -190,10 +190,72 @@ class Users extends CI_Controller {
 
 	}
 
-	public function edit(){
+	public function edit($id){
 
 
-		
+		$data['user'] = $this->session->userdata('user');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['role'] = $this->session->userdata('role');
+		$data['created_at'] = $this->session->userdata('created_at');
+
+		$data['title'] = 'edit';
+		$data['site'] = 'Users';
+
+
+		$this->form_validation->set_rules('nombre', 'nombre', 'required|max_length[25]');
+		$this->form_validation->set_rules('email', 'Email', 'required|max_length[25]|valid_email');	 
+		$this->form_validation->set_rules('role', 'Role', 'required|min_length[3]');
+
+
+		if ($this->form_validation->run() == FALSE){       
+
+			//el id del usuario y mostramos la data en la vista
+			$usuario['usuario'] = Usuarios::find($id);	
+
+
+			$this->load->view('layouts/header',$data);
+			$this->load->view('admin/edit',$usuario);
+			$this->load->view('layouts/footer');
+
+		}else{
+
+
+			if (isset($_POST['submit'])) {
+
+				$nombre = $this->input->post('nombre');
+				$email = $this->input->post('email');		        
+				$role = $this->input->post('role');
+
+
+				//le pasamos el id del usuario
+				// que queremos editar
+				$usuario = Usuarios::find($id);
+
+				$usuario->nombre = $nombre;
+				$usuario->email = $email;
+				$usuario->role = $role;
+
+				$usuario->save();
+
+
+				// si el usuario se actualizado ejecutamos
+				if($usuario->save()) {
+
+					$this->session->set_flashdata('userEdited', 'Usuario editado');
+					redirect(base_url("users/view")); 
+
+
+				} 
+
+				redirect(base_url("users/view"));
+
+
+			} 
+
+
+		}
+
+
 	}
 
 
@@ -204,13 +266,13 @@ class Users extends CI_Controller {
 
 
 
-		 if($userDelete) {
+		if($userDelete) {
 
-          $this->session->set_flashdata('userDelete', 'Usuario eliminado');
-          redirect(base_url("users/view")); 
+			$this->session->set_flashdata('userDelete', 'Usuario eliminado');
+			redirect(base_url("users/view")); 
 
 
-        }    
+		}    
 
 
 	}

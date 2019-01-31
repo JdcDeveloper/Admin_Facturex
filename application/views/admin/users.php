@@ -2,7 +2,7 @@
 
 	<div class="page-header">
 
-		<p class="bg-danger" id="msgProjectDeleted">
+		<p class="bg-danger" id="">
 
 			<?php if($this->session->flashdata('userDelete')): ?>
 
@@ -12,25 +12,25 @@
 
 		</p>
 
-		<p class="bg-warning" id="msgProjectRejected">
+		<p class="bg-success" id="">
 
-			<?php if($this->session->flashdata('projectRejected')): ?>
+			<?php if($this->session->flashdata('userEdited')): ?>
 
-				<?php echo $this->session->flashdata('projectRejected'); ?>
+				<?php echo $this->session->flashdata('userEdited'); ?>
 
 			<?php endif; ?>
 
 		</p>
 
-		<p class="bg-primary" id="msgProjectAproved">
+		<!-- <p class="bg-primary" id="">
 
-			<?php if($this->session->flashdata('projectAproved')): ?>
+			<?php //if($this->session->flashdata('projectAproved')): ?>
 
-				<?php echo $this->session->flashdata('projectAproved'); ?>
+				<?php //echo $this->session->flashdata('projectAproved'); ?>
 
-			<?php endif; ?>
+			<?php //endif; ?>
 
-		</p>		
+		</p>	 -->	
 		
 		
 		<!-- <h1>Usuarios</h1> -->
