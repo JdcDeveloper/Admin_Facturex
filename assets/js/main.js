@@ -11,6 +11,20 @@ $.ajax({
 });
 
 
+// cargo los presupuestos con ajax
+$.ajax({
+  url: BASE_URL+'api/presupuesto',   
+  dataType: 'json'    
+})
+.done(function(result) { 
+
+  $.each(result, function(index, val) {
+   $("#presupuesto").append('<option>'+val.presupuesto+'</option>') 
+ });
+});
+
+
+
 
 
 
