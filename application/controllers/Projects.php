@@ -7,14 +7,18 @@ class Projects extends CI_Controller {
 
 
 	public function view()
-	{
-		// $data[ 'logeo' ] = true;
+	{		
 
+		// guardo la data del usuario logeado y lo paso a las vistas
+		// como un array
 		$data['user'] = $this->session->userdata('user');
 		$data['nombre'] = $this->session->userdata('nombre');
 		$data['role'] = $this->session->userdata('role');
 		$data['created_at'] = $this->session->userdata('created_at');
 
+		// guardo el email del usuario logeado en una variable
+		// para usarla en los metodos
+		$user = $this->session->userdata('user');
 		
 		
 
@@ -22,7 +26,36 @@ class Projects extends CI_Controller {
 
 		$data['site'] = 'Users';   
 
-		$data['usuarios'] = Usuarios::all();     
+		// $data['projects'] = Proyectos::all();
+
+		// $datas = Proyectos::all();
+
+		// hago la consulta para el resultado
+		// pasarlo a la vista
+		$data['projects'] = Proyectos::where('email',$user)->get();
+
+		// la misma consulta pero la guardo en una variable
+		$datas = Proyectos::where('email',$user)->get();
+
+
+		// ahoro lo recorro en el metodo
+		 foreach ($datas as $datos) {
+
+		 	 $datos->email;
+
+		 }
+
+
+		 // si el email del usuario logeado coincide
+		 // con el email que traigo de la consulta como objetos
+		if ($this->session->userdata('user') === $datos->email) {
+			// paso la variable a la vista como array
+			$data['userMacth'] = True;
+
+		}else{
+
+			$data['userMacth'] = False;
+		}     
 
 		$this->load->view('layouts/header',$data);
 
@@ -30,6 +63,25 @@ class Projects extends CI_Controller {
 
 		$this->load->view('layouts/footer'); 
 
+	}
+
+
+	public function ar(){
+
+		$datas = Proyectos::all();
+
+		// $datas = Usuarios::all();
+		// echo $datas->email;
+			// echo $datas->nombre;
+
+			// echo gettype($datas);
+
+		 echo $datas[0]->nombre;
+
+
+		 foreach ($datas as $datos) {
+		 	echo $datos->nombre;
+		 }
 	}
 
 	public function add()
@@ -122,7 +174,8 @@ class Projects extends CI_Controller {
 		$proyecto->email = $emailUser;
 		$proyecto->nombre = $this->input->post('nombre');
 		$proyecto->presupuesto = $this->input->post('presupuesto');
-		$proyecto->descripcion = $this->input->post('descripcion');			
+		$proyecto->descripcion = $this->input->post('descripcion');
+		$proyecto->status = 'pendiente';				
 
 
 		$proyecto->save();     
@@ -130,7 +183,7 @@ class Projects extends CI_Controller {
 		// }else{
 
 
-				redirect(base_url("projects/view"));
+		redirect(base_url("projects/view"));
 		// }
 
 
