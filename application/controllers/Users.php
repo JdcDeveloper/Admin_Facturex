@@ -162,6 +162,25 @@ class Users extends CI_Controller {
 
 	}
 
+
+
+	public function delete($id){
+
+		$userDelete = Usuarios::where('id', $id)->delete();
+
+
+
+		 if($userDelete) {
+
+          $this->session->set_flashdata('userDelete', 'Usuario eliminado');
+          redirect(base_url("users/view")); 
+
+
+        }    
+
+
+	}
+
 	public function getSession(){
 
 		print_r($data['user'] = $this->session->userdata('user'));

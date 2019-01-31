@@ -4,9 +4,9 @@
 
 		<p class="bg-danger" id="msgProjectDeleted">
 
-			<?php if($this->session->flashdata('projectsDeleted')): ?>
+			<?php if($this->session->flashdata('userDelete')): ?>
 
-				<?php echo $this->session->flashdata('projectsDeleted'); ?>
+				<?php echo $this->session->flashdata('userDelete'); ?>
 
 			<?php endif; ?>
 
@@ -77,11 +77,11 @@
 					<td><?php echo $data->role ?> </td>
 					<td><?php echo $data->created_at ?> </td>				
 					<td >
-						<a class="approved" href="<?php echo base_url("users/getUserByID/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-zoom-in" data-toggle="approved" title="Approved" onclick="approved()"></span></a>
+						<a class="view" href="<?php echo base_url("users/getUserByID/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-zoom-in" data-toggle="view" title="Ver" ></span></a>
 
-						<a class="rejected"  href="<?php echo base_url("users/edit/$data->id") ?>" ><span class="btn-success btn-xs glyphicon glyphicon glyphicon-pencil" data-toggle="rejected" title="Rejected" onclick="rejected()" ></span></a>
+						<a class="edit"     ><span class="btn-success btn-xs glyphicon glyphicon glyphicon-pencil" data-toggle="edit" title="Editar"  onclick="test()"></span></a>
 
-						<a id="deleted"  href="<?php echo base_url("users/delete/$data->id") ?>" ><span class="btn-danger btn-xs glyphicon glyphicon-trash" data-toggle="deleted" title="Deleted" onclick="deleted()"></span></a>
+						<a id="deleteUser"  href="<?php echo base_url("users/delete/$data->id") ?>" ><span class="btn-danger btn-xs glyphicon glyphicon-trash" data-toggle="delete" title="Eliminar" onclick="deleteUser()"></span></a>
 					</td>
 
 
@@ -104,53 +104,119 @@
 </div>
 
 
+<!-- <script type="text/javascript">
+	
+	function deleteUser(evt){    
+  	
+
+    // swal({
+    //   title: 'Estas seguro?',
+    //   text: "Se eliminara el registro!",
+    //   type: 'warning',
+    //   showCancelButton: true,
+    //   confirmButtonColor: "#3085d6",
+    //   confirmButtonText: 'Aceptar',
+    //   cancelButtonColor: '#d33'    
+     
+    // }).then((result) => {
+
+    //  	console.log(result + "Usuario eliminado");
+    
+      
+    // });
+
+    swal({
+      title: 'Estas seguro?',
+      text: "Se eliminara el registro!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: 'Aceptar',
+      cancelButtonColor: '#d33'    
+     
+    })
+
+    if (swal) {
+
+
+    }else{
+
+    	event.preventDefault();
+
+    }
+
+
+
+
+
+
+
+}
+
+
+</script> -->
+
 <script type="text/javascript">
-	function approved(evt){
-		
-		var confirms;
-		
-		confirms=confirm("you are sure to approve this project?");
+	
 
-		if (confirms) {        
-			
-		} else {
-			
-			event.preventDefault();
-			
-		}
-
-	}
-
-	function rejected(evt){
-		
-		var confirms;
-		
-		confirms=confirm("You are sure to reject this project?");
-
-		if (confirms) {        
-			
-		} else {
-			
-			event.preventDefault();
-			
-		}
-
-	} 
+	function test(evt){
 
 
-	function deleted(evt){
-		
-		var confirms;
-		
-		confirms=confirm("Are you sure to delete this record?");
+// 	promise.then(function(result) {
+//   console.log(result); // "Todo bien!"
+// }, function(err) {
+//   console.log(err); // Error: "Hubo un fallo"
+// });
 
-		if (confirms) {        
-			
-		} else {
-			
-			event.preventDefault();
-			
-		}
+// event.preventDefault();
 
-	}                    
-</script>
+
+  swal({
+      title: 'Estas seguro?',
+      text: "Se eliminara el registro!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: 'Aceptar',
+      cancelButtonColor: '#d33'    
+     
+    }).then(function(result) {
+
+  //   	$('#deleteUser').click(function(event) {
+  // 			window.location=BASE_URL+'users/delete';
+		// });
+
+		// ir();
+		// window.location=BASE_URL+'users/delete';
+
+  		console.log(result + "Usuario eliminado"); // Bien
+
+  		console.log(result + "Usuario eliminado"); // Bien
+
+  		console.log(typeof(result));
+	
+	}, function(err) {
+
+		// event.preventDefault();
+  		console.log(err + "Usuario no eliminado"); // Fallo
+
+
+	});
+
+
+
+
+}
+
+
+// function ir(){
+
+// 	$('#deleteUser').click(function(event) {
+//   			window.location=BASE_URL+'users/delete';
+// 		});
+
+// }
+
+
+</script>	                    
+

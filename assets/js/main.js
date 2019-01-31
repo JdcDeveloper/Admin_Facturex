@@ -29,6 +29,45 @@ $.ajax({
 
 
 
+// //************* funcion para eliminar usuarios ******************//
+
+
+// function deleteUser(evt){    
+  	
+
+//     swal({
+//       title: 'Estas seguro?',
+//       text: "Se eliminara el registro!",
+//       type: 'warning',
+//       showCancelButton: true,
+//       confirmButtonColor: "#3085d6",
+//       confirmButtonText: 'Aceptar',
+//       cancelButtonColor: '#d33'    
+     
+//     }).then((result) => {
+
+//      	console.log(result + "Usuario eliminado");
+    
+      
+//     });
+
+
+
+
+// }
+
+
+// delete users
+// $('#deleteUser').click(function(event) {
+//   window.location=BASE_URL+'users/delete';
+// });
+
+
+
+
+	
+
+
 
 
 

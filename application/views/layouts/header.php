@@ -13,8 +13,18 @@
  <script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 
 
+
+
+
   <!-- Datatable js -->
   <script src="<?php echo base_url();?>assets/lib/js/jquery.dataTables.min.js"></script>
+
+  
+  <!-- sweet alert2 -->
+  <!--  <script src="<?php //echo base_url();?>assets/lib/js/sweetalert2.min.js"></script>  -->
+
+  <!--  <script src="<?php //echo base_url();?>assets/lib/js/sweetalert2.all.min.js"></script>  -->
+
 
   <!-- datepicker -->
 <script src="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
@@ -25,6 +35,20 @@
 
  <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+ <!-- sweet alert2 -->
+  <!--  <script src="<?php //echo base_url();?>assets/lib/js/sweetalert2.min.js"></script>  -->   
+
+<!--   <script src="<?php //echo base_url();?>assets/lib/js/sweetalert2.all.min.js"></script>  -->
+
+<!-- sweet alert2 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
+
+<!-- me funciono con estas cdn el sweet alert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/>
+
 
 
   <!-- Bootstrap 3.3.7 -->
@@ -62,6 +86,10 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/lib/css/jquery.dataTables.min.css"> 
 
 
+   <!--  sweet alert2 -->
+<!--   <link rel="stylesheet" type="text/css" href="<?php //echo base_url();?>assets/lib/css/sweetalert2.min.css">  -->
+
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,11 +102,59 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 
+
  <!--  la url base para usarla con los js -->
 
 <script type="text/javascript">
-  var BASE_URL = "<?php echo base_url(); ?>";
+
+  var BASE_URL = "<?php echo base_url(); ?>"; 
+
 </script>
+
+
+
+<script type="text/javascript">
+
+   // import * as swal from sweetalert;
+
+    // import swal from 'sweetalert2.all.min.js';
+
+    // import * as swal from 'sweetalert';
+
+      // import swal from 'assets/lib/js/sweetalert2.all.min.js';
+
+       // import swal from ' <?php //echo base_url();?>assets/lib/js/sweetalert2.all.min.js';
+
+      
+  
+    // swal("Hola mundo!");
+
+
+    // alert();
+
+</script>
+
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+
+
+<!--   <script src="<?php //echo base_url();?>assets/lib/js/sweetalert2.all.min.js"></script>  -->
+
+
+<!-- <script>
+
+// import swal from 'sweetalert';
+
+import swal from 'sweetalert2.all.min.js';
+  
+
+
+</script> -->
+
+<!-- <script>
+  
+    swal("Hola mundo!");
+
+</script> -->
 
 </head>
 

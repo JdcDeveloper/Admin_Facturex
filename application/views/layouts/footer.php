@@ -230,19 +230,21 @@
 <script src="<?php echo base_url();?>assets/js/charts.js"></script>   
 
 <!-- Morris.js charts -->
-<script src="<?php echo base_url();?>assets/bower_components/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url();?>assets/bower_components/morris.js/morris.min.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/bower_components/raphael/raphael.min.js"></script>
+<script src="<?php //echo base_url();?>assets/bower_components/morris.js/morris.min.js"></script> -->
 
 <!-- Sparkline -->
 <script src="<?php echo base_url();?>assets//bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
-<script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="<?php //echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
+
 <!-- jQuery Knob Chart -->
-<script src="<?php echo base_url();?>assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script> -->
+
 <!-- daterangepicker -->
-<script src="<?php echo base_url();?>assets/bower_components/moment/min/moment.min.js"></script>
-<script src="<?php echo base_url();?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/bower_components/moment/min/moment.min.js"></script>
+<script src="<?php //echo base_url();?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script> -->
 
 <!-- datepicker -->
 <!-- <script src="<?php //echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
@@ -253,12 +255,17 @@
 <script src="<?php echo base_url();?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url();?>assets/bower_components/fastclick/lib/fastclick.js"></script>
+
+
+<!-- esta es la parte del sidebar para que funcione -->
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>assets/dist/js/adminlte.min.js"></script>
+
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>assets/dist/js/pages/dashboard.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/dist/js/pages/dashboard.js"></script> -->
+
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
+<!-- <script src="<?php //echo base_url();?>assets/dist/js/demo.js"></script> -->
 
 
 <!-- lo del login
@@ -269,13 +276,16 @@
 
 <script src="<?php echo base_url();?>assets/js/table.js"></script>
 
-<!-- <script src="<?php echo base_url();?>assets/js/datepicker.js"></script>  -->
+<!-- <script src="<?php //echo base_url();?>assets/js/datepicker.js"></script>  -->
+
+
 
 <!-- scripts main -->
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
 
 
-<!-- <script src="<?php //echo base_url();?>assets/js/charts.js"></script>    -->
+<!-- <script src="<?php //echo base_url();?>assets/js/charts.js"></script>    --> 
+
 
    
 </body>
