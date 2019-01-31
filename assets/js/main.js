@@ -29,6 +29,14 @@ $.ajax({
 
 
 
+// // back users
+$('#backUsers').click(function(event) {
+	window.location=BASE_URL+'users/view';
+});
+
+
+
+
 // //************* funcion para eliminar usuarios ******************//
 
 

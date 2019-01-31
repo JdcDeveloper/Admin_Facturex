@@ -77,9 +77,9 @@
 					<td><?php echo $data->role ?> </td>
 					<td><?php echo $data->created_at ?> </td>				
 					<td >
-						<a class="view" href="<?php echo base_url("users/getUserByID/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-zoom-in" data-toggle="view" title="Ver" ></span></a>
+						<a class="view" href="<?php echo base_url("users/findUser/$data->id") ?>" ><span class="btn-primary btn-xs glyphicon glyphicon glyphicon-zoom-in" data-toggle="view" title="Ver" ></span></a>
 
-						<a class="edit"     ><span class="btn-success btn-xs glyphicon glyphicon glyphicon-pencil" data-toggle="edit" title="Editar"  onclick="test()"></span></a>
+						<a class="edit" href="<?php echo base_url("users/edit/$data->id") ?>"    ><span class="btn-success btn-xs glyphicon glyphicon glyphicon-pencil" data-toggle="edit" title="Editar"  ></span></a>
 
 						<a id="deleteUser"  href="<?php echo base_url("users/delete/$data->id") ?>" ><span class="btn-danger btn-xs glyphicon glyphicon-trash" data-toggle="delete" title="Eliminar" onclick="deleteUser()"></span></a>
 					</td>

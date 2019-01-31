@@ -162,6 +162,40 @@ class Users extends CI_Controller {
 
 	}
 
+	public function findUser($id){
+
+
+		$data['user'] = $this->session->userdata('user');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['role'] = $this->session->userdata('role');
+		$data['created_at'] = $this->session->userdata('created_at');
+
+		$data['title'] = 'view';
+
+		$data['site'] = 'Users';   
+
+		// findOrFail nos da un error mas especifico al no encontrar registros,
+    	// como un codigo 404 por ejemplo
+		 $usuario['usuario'] = Usuarios::findOrFail($id);
+
+		 // echo $usuario;
+
+
+		$this->load->view('layouts/header',$data);
+
+		$this->load->view('admin/view',$usuario);
+
+		$this->load->view('layouts/footer');
+
+
+	}
+
+	public function edit(){
+
+
+		
+	}
+
 
 
 	public function delete($id){
