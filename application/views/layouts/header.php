@@ -1040,11 +1040,11 @@ import swal from 'sweetalert2.all.min.js';
 
     <!--   este row termina con footer -->
       <!-- Main row -->
-      <div class="row">
+      <!-- <div class="row"> -->
 
          <!--   este section termina con footer -->
         <!-- Left col -->
-        <section class="col-lg-7 connectedSortable">
+       <!--  <section class="col-lg-7 connectedSortable"> -->
           <!-- Custom tabs (Charts with tabs)-->
           
           <!-- /.nav-tabs-custom -->
@@ -1060,9 +1060,9 @@ import swal from 'sweetalert2.all.min.js';
 
           <!-- /.box -->
 
-        </section>
+        <!-- </section> -->
         <!-- right col -->
-      </div>
-
+     <!--  </div>
+ -->
       <!-- /.row (main row) -->
    <!--  </section> -->

@@ -1,3 +1,8 @@
+<div class="row page-header">	
+	<h2 class="fa fa-users col-md-6 col-md-offset-3">Add</h2>
+</div>
+
+
 <div class="row col-md-6 col-md-offset-3 ">
 
 	<?php echo form_open('users/register'); ?>	
@@ -80,23 +85,20 @@
 		</div>
 		
 	</div>	
- -->
+-->
 
 
 
-	<div class="form-group">
-		<button type="submit" name="submit" value="submit" class="btn-primary btn-sm glyphicon glyphicon-ok">Registrar</button>
-		<button type="reset" class="btn-danger btn-sm glyphicon glyphicon-remove">Cancelar</button>
-	</div>
+<div class="form-group">
+	<button type="submit" name="submit" value="submit" class="btn-primary btn-sm glyphicon glyphicon-ok">Registrar</button>
+	<button type="reset" class="btn-danger btn-sm glyphicon glyphicon-remove">Cancelar</button>
+</div>
 
-	<div class="form-group">
-		<a href="<?php echo base_url();?>users/view"><span class="btn-default btn-sm glyphicon glyphicon-arrow-left">Back</span></a>
-	</div>	
+<div class="form-group">
+	<a href="<?php echo base_url();?>users/view"><span class="btn-default btn-sm glyphicon glyphicon-arrow-left">Back</span></a>
+</div>	
 
-	<?php echo form_close(); ?>	
+<?php echo form_close(); ?>	
 
-	<br>
-	<br>
-	<br>
-	<br>	
+
 </div>

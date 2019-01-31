@@ -1,3 +1,7 @@
+		<div class="row page-header">	
+			<h2 class="fa fa-users col-md-6 col-md-offset-3 ">Edit</h2>
+		</div>
+
 		<div class="row col-md-6 col-md-offset-3" >
 
 			<form action="" method="post">
@@ -29,9 +33,6 @@
 				<div class="form-group">
 					<a id="backUsers"><span class="btn-default btn-sm glyphicon glyphicon-arrow-left">Back</span></a>
 				</div>									
-			</form>
-			<br>
-			<br>
-			<br>
+			</form>		
 			
 		</div>
