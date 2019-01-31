@@ -277,39 +277,134 @@ class Users extends CI_Controller {
 
 	}
 
-	public function getSession(){
+	public function profile()
+	{
 
-		print_r($data['user'] = $this->session->userdata('user'));
+		// if ($this->session->userdata('user') && $this->session->userdata('role')==="admin") {
+		$data['user'] = $this->session->userdata('user');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['role'] = $this->session->userdata('role');
+		$data['created_at'] = $this->session->userdata('created_at');
 
-		// $data['user'] = $this->session->userdata('user');
-		// $data['nombre'] = $this->session->userdata('nombre');
-		// $data['role'] = $this->session->userdata('role');
-		// $data['created_at'] = $this->session->userdata('created_at');
+		$data['title'] = 'profile';
+		$data['site'] = 'Users';
 
-		// echo $data['user'] = $this->session->userdata('user');
-		// echo $data['nombre'] = $this->session->userdata('nombre');
-		// $data['role'] = $this->session->userdata('role');
-		// $data['created_at'] = $this->session->userdata('created_at');
 
-		// echo "funcionq";
+
+		$this->load->view('layouts/header',$data);					
+		$this->load->view('profile');
+		$this->load->view('layouts/footer');
+
+		// }else{
+
+			// redirect(base_url());
+
+		// }
 
 	}
 
 
-	public function test(){
+	public function loadImg()	{
 
-		$this->getSession();
+
+		$userSession = $this->session->userdata('user');
+
+
+
+
+		$config['upload_path'] = "./uploads/files";        
+		$config['allowed_types'] = "gif|jpg|jpeg|png";
+		$config['max_size'] = "50000";
+		$config['max_width'] = "2000";
+		$config['max_height'] = "2000";
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload('img')) {
+
+			$data['uploadError'] = $this->upload->display_errors();          
+
+
+			if($this->upload->display_errors()) {
+
+
+				$this->session->set_flashdata('uploadFailed', 'Fallo la carga');
+				redirect(base_url("users/profile"));	
+
+			} 
+			return;
+		}
+
+
+		$file_info= $this->upload->data();
+
+		$this->createThumbnails($file_info['file_name']); 
+
+
+		if (isset($_POST['submit'])) {
+
+			$img=$file_info['file_name'];
+
+			$dataUser = Usuarios::where('email',$userSession)
+			->update(array('imagen' => $img));
+			        					
+
+			// $this->Login_Model->loadImg($img);
+
+
+			redirect(base_url("users/profile"));
+
+
+		} 
 
 	}
 
 
+	// funcion para crear tumbnails
+	function createThumbnails($filename){
 
-	public function prueba(){
+		$config['image_library'] = 'gd2';
+		$config['source_image'] = 'uploads/files/'.$filename;
+		$config['create_thumb'] = TRUE;
+		$config['maintain_ratio'] = TRUE;
+		$config['new_image']='uploads/thumbnails';
+        $config['thumb_marker']='';//capture_thumb.png
+        $config['width'] = 50;
+        $config['height'] = 50;
+        $this->load->library('image_lib', $config); 
+        $this->image_lib->resize();
+    }
 
-		$result = Usuarios::all(); 
 
-		echo json_encode($result);
 
-	}     
+
+	// public function getSession(){
+
+	// 	print_r($data['user'] = $this->session->userdata('user'));
+
+	// 	// $data['user'] = $this->session->userdata('user');
+	// 	// $data['nombre'] = $this->session->userdata('nombre');
+	// 	// $data['role'] = $this->session->userdata('role');
+	// 	// $data['created_at'] = $this->session->userdata('created_at');
+
+	// 	// echo $data['user'] = $this->session->userdata('user');
+	// 	// echo $data['nombre'] = $this->session->userdata('nombre');
+	// 	// $data['role'] = $this->session->userdata('role');
+	// 	// $data['created_at'] = $this->session->userdata('created_at');
+
+	// 	// echo "funcionq";
+
+	// }
+
+
+	// public function test(){
+
+	// 	$this->getSession();
+
+	// }
+
+
+
+
 
 }
